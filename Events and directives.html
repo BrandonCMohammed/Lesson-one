@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue 3 Basics</title>
+
+        <style>
+            [v-cloak] {
+                display: none;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div id = "app" v-cloak>
+            {{greeting}}
+            <input v-model="greeting"/> <!--v-model is a directive that connects the html and vue scritp-->
+            <!--There are other things that can be used, v-is="" is one option.
+                v-cloak is used to preventing rendering until everything is ready. It is used in the 
+                opening tag of the section and has a section in the styles css
+            -->
+
+        </div>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!--This imports VUE-->
+        <script>
+            let app = Vue.createApp({
+                data: function (){
+                    return{
+                        greeting: 'Hello Vue 3!',
+                        isVisible: true
+                    }
+                }
+            })
+            app.mount('#app')
+        </script>
+    </body>
+</html>
